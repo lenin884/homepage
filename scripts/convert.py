@@ -24,7 +24,7 @@ def png_to_svg(png_path, svg_path):
     dwg.save()
 
 # Paths to the input image and output SVG
-image_path = "/Users/e_osipov/Downloads/workline.png"
+image_path = "./src/image.png"
 svg_path = "workline.svg"
 
 if __name__ == "__main__":
