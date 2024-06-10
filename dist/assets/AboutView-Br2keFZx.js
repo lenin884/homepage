@@ -1,0 +1,1 @@
+import{_ as o,r as t,o as c,c as n,a}from"./index-NTU3D16-.js";const r={};function s(_,u){const e=t("AboutView",!0);return c(),n("main",null,[a(e)])}const i=o(r,[["render",s],["__scopeId","data-v-c3093ecd"]]);export{i as default};
