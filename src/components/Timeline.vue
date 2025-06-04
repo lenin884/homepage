@@ -1,6 +1,6 @@
 <template>
   <div
-    class="timeline-horizontal"
+    class="timeline"
     ref="container"
     @mousedown="dragStart"
     @mousemove="dragMove"
@@ -9,9 +9,10 @@
     @wheel.prevent="onWheel"
   >
     <TimelineItem
-      v-for="item in timelineItems"
+      v-for="(item, index) in timelineItems"
       :key="item.name"
       :item="item"
+      :top="index % 2 === 0"
     />
   </div>
 </template>
