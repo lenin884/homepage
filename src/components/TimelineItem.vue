@@ -1,6 +1,6 @@
 <template>
-  <div :class="['timeline-item-wrapper', position]">
-    <div :class="['timeline-dot', position]" @click="toggleDetails"></div>
+  <div class="timeline-item-wrapper">
+    <div class="timeline-dot" @click="toggleDetails"></div>
     <div class="timeline-item">
       <h2>{{ item.name }}</h2>
       <p>{{ item.description }}</p>
@@ -18,8 +18,7 @@ export default {
     DetailBlock
   },
   props: {
-    item: Object,
-    position: String
+    item: Object
   },
   data() {
     return {
