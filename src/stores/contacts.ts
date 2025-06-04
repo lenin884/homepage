@@ -2,20 +2,15 @@ import { ref } from 'vue'
 import { defineStore } from 'pinia'
 
 export const useContactsStore = defineStore('contacts', () => {
-    const contacts = ref([
-        {
-            type: 'email',
-            value: 'test@gmail.com',
-        },
-        {
-            type: 'phone',
-            value: '+1234567890',
-        },
-        {
-            type: 'tg',
-            value: '@test',
-        }
-    ])
+  const contacts = ref([
+    { type: 'email', value: 'test@gmail.com' },
+    { type: 'phone', value: '+1234567890' },
+    { type: 'telegram', value: '@test' },
+    { type: 'instagram', value: '@insta_test' },
+    { type: 'linkedin', value: 'linkedin.com/in/test' },
+    { type: 'skype', value: 'test_skype' },
+    { type: 'address', value: '123 Sample Street' }
+  ])
 
-    return { contacts }
+  return { contacts }
 })
