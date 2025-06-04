@@ -1,5 +1,5 @@
 <template>
-  <div class="timeline-item-wrapper">
+  <div :class="['timeline-item-wrapper', top ? 'top' : 'bottom']">
     <div class="timeline-dot" @click="toggleDetails"></div>
     <div class="timeline-item">
       <h2>{{ item.name }}</h2>
@@ -18,7 +18,8 @@ export default {
     DetailBlock
   },
   props: {
-    item: Object
+    item: Object,
+    top: Boolean
   },
   data() {
     return {
