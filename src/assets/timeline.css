@@ -18,7 +18,7 @@
   left: 0;
   right: 0;
   height: 2px;
-  background-color: #2196F3;
+  background: linear-gradient(to right, #42a5f5, #7e57c2);
 }
 
 .timeline-item-wrapper {
@@ -35,13 +35,13 @@
   transform: translate(-50%, -50%);
   width: 20px;
   height: 20px;
-  background-color: #2196F3;
+  background: linear-gradient(135deg, #42a5f5, #7e57c2);
   border-radius: 50%;
   cursor: pointer;
 }
 
 .timeline-dot:hover {
-  background-color: #ff5722;
+  background: linear-gradient(135deg, #ab47bc, #42a5f5);
 }
 
 .timeline-item {

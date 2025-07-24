@@ -18,3 +18,11 @@ import ContactBlock from './ContactItem.vue'
 const store = useContactsStore()
 const { contacts: contactItems } = storeToRefs(store)
 </script>
+
+<style scoped>
+.contacts {
+  max-width: 700px;
+  margin: 0 auto;
+  text-align: left;
+}
+</style>

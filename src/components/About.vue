@@ -8,3 +8,12 @@
     <p>Praesent sit amet eros vitae turpis ullamcorper semper ut et tortor.</p>
   </div>
 </template>
+
+<style scoped>
+.about {
+  max-width: 700px;
+  margin: 0 auto;
+  line-height: 1.6;
+  text-align: left;
+}
+</style>
