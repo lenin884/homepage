@@ -32,11 +32,11 @@ export default {
   right: 0;
   bottom: 0;
   /*
-   * Add your own background image by replacing the color below with
+   * Add your own background image by replacing the gradient below with
    * `background-image: url('@/image.png');` and placing a file at
    * `src/image.png`.
    */
-  background-color: #333;
+  background: linear-gradient(120deg, #84fab0 0%, #8fd3f4 100%);
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
@@ -46,9 +46,10 @@ export default {
 
 .hero-overlay {
   text-align: center;
-  background: rgba(0, 0, 0, 0.4);
+  background: rgba(0, 0, 0, 0.5);
   padding: 20px;
   border-radius: 8px;
+  backdrop-filter: blur(2px);
 }
 
 .hero-title {
