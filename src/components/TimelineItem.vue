@@ -1,7 +1,10 @@
 <template>
-  <div :class="['timeline-item-wrapper', top ? 'top' : 'bottom']">
+  <div
+    :class="['timeline-item-wrapper', top ? 'top' : 'bottom']"
+    :style="{ '--offset': (top ? -offset : offset) + 'px' }"
+  >
     <div class="timeline-dot" @click="toggleDetails"></div>
-    <div class="timeline-item">
+    <div :class="['timeline-item', { expanded: showDetails }]">
       <h2>{{ item.name }}</h2>
       <p>{{ item.description }}</p>
       <DetailBlock v-if="showDetails" :details="item.details" />
@@ -23,7 +26,8 @@ export default {
   },
   data() {
     return {
-      showDetails: false
+      showDetails: false,
+      offset: Math.floor(Math.random() * 40) + 10
     };
   },
   methods: {
