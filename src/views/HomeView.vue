@@ -1,11 +1,9 @@
 <template>
   <main>
-    <Hero />
-    <Timeline />
+    <ConsoleHome />
   </main>
 </template>
 
 <script setup lang="ts">
-import Hero from '../components/Hero.vue'
-import Timeline from '../components/Timeline.vue'
+import ConsoleHome from '../components/ConsoleHome.vue'
 </script>

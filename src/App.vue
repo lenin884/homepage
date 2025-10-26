@@ -63,11 +63,15 @@ nav a.router-link-exact-active {
   border: 1px solid #2196F3;
   border-radius: 8px;
   margin-top: 10px;
-  transition: background-color 0.3s;
+  transition: background-color 0.3s, border 0.3s, padding 0.3s;
 }
 
 .tab-content.home {
-  background-color: #e0f7fa;
+  background-color: transparent;
+  border: none;
+  padding: 0;
+  display: flex;
+  justify-content: center;
 }
 
 .tab-content.about {
