@@ -4,94 +4,53 @@ import { computed } from 'vue'
 
 const route = useRoute()
 
-const activeTab = computed(() => {
-  return route.name
-})
+const activeTab = computed(() => route.name?.toString() ?? 'Home')
 </script>
 
 <template>
-  <img alt="Workline logo" class="logo" src="@/assets/workline.svg" width="125" height="125" />
-  <div id="app">
-    <div class="navbar">
-      <nav>
-        <RouterLink to="/" :class="{ active: activeTab === 'Home' }">Home</RouterLink> |
-        <RouterLink to="/about" :class="{ active: activeTab === 'About' }">About</RouterLink> |
-        <RouterLink to="/contacts" :class="{ active: activeTab === 'Contacts' }">Contacts</RouterLink>
+  <div class="app-shell min-vh-100">
+    <header class="border-bottom bg-body-tertiary sticky-top shadow-sm">
+      <nav class="navbar navbar-expand-lg container py-2">
+        <RouterLink to="/" class="navbar-brand d-flex align-items-center gap-2">
+          <img alt="Workline logo" class="rounded" src="@/assets/workline.svg" width="32" height="32" />
+          <span class="fw-semibold">Workline Portfolio</span>
+        </RouterLink>
+
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#mainNav"
+          aria-controls="mainNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div id="mainNav" class="collapse navbar-collapse justify-content-end">
+          <div class="navbar-nav gap-lg-2">
+            <RouterLink to="/" class="nav-link" :class="{ active: activeTab === 'Home' }">Home</RouterLink>
+            <RouterLink to="/about" class="nav-link" :class="{ active: activeTab === 'About' }">About</RouterLink>
+            <RouterLink to="/contacts" class="nav-link" :class="{ active: activeTab === 'Contacts' }">Contacts</RouterLink>
+          </div>
+        </div>
       </nav>
-    </div>
-    <div :class="['tab-content', activeTab?.toString().toLowerCase()]">
+    </header>
+
+    <main class="container py-4 py-lg-5">
       <RouterView />
-    </div>
+    </main>
   </div>
 </template>
 
-<script lang="ts">
-export default {
-  name: 'App'
-};
-</script>
-
-<style>
-#app {
-  text-align: center;
+<style scoped>
+.app-shell {
+  background: radial-gradient(circle at 20% 20%, #f8f9fa, #e9f2ff 45%, #eef1ff);
 }
 
-.logo {
-  margin: 20px;
-}
-
-.navbar {
-  display: flex;
-  justify-content: center;
-  padding: 10px 0;
-  border-bottom: 2px solid #2196F3;
-}
-
-nav a {
-  margin-right: 10px;
-  text-decoration: none;
-  color: #42b983;
-}
-
-nav a.router-link-exact-active {
-  font-weight: bold;
-  text-decoration: underline;
-}
-
-.tab-content {
-  padding: 20px;
-  border: 1px solid #2196F3;
-  border-radius: 8px;
-  margin-top: 10px;
-  transition: background-color 0.3s, border 0.3s, padding 0.3s;
-}
-
-.tab-content.home {
-  background-color: transparent;
-  border: none;
-  padding: 0;
-  display: flex;
-  justify-content: center;
-}
-
-.tab-content.about {
-  background-color: #f1f8e9;
-}
-
-.tab-content.contacts {
-  background-color: #fbe9e7;
-}
-
-nav a.active {
-  font-weight: bold;
-  background-color: #2196F3;
-  color: #fff;
-  padding: 10px 20px;
-  border-radius: 4px;
-  transition: background-color 0.3s;
-}
-
-nav a.active:hover {
-  background-color: #1976d2;
+.nav-link.active {
+  font-weight: 600;
+  color: var(--bs-primary) !important;
 }
 </style>
